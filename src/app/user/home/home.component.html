@@ -1,0 +1,41 @@
+<form action="" (ngSubmit)="save()"  #myform=ngForm> 
+    <div><label for="">username</label></div>
+    <div>
+        <input type="text" class="form-control" name="username" value="" id="" minlength="3" required  [(ngModel)]=model.username  #username="ngModel"  >
+         <div *ngIf="username.invalid && (username.dirty || username.untouched)"
+        class="alert alert-danger">
+        username is invalid
+        </div> 
+    </div>
+
+    <div><label for="">email</label></div>
+    <div>
+       
+        <input type="email"  class="form-control" name="email" value=""   id="" required  [(ngModel)]=model.email  #email="ngModel"  >
+         <div *ngIf="email.invalid && (email.dirty || email.untouched)"
+        class="alert alert-danger">
+        email is invalid
+        </div>  
+    </div>
+
+    <div><label for="">password</label></div>
+    <div>
+        <input type="password"  class="form-control" name="password" value=""  id="" minlength="3" required [(ngModel)]=model.password  #password="ngModel" >
+         <div *ngIf="password.invalid && (password.dirty || password.untouched)"
+        class="alert alert-danger">
+        password  is invalid
+        </div> 
+    </div>
+
+    <div><label for="">mobile</label></div>
+    <div>
+       <input type="tel"  class="form-control" name="number" value=""  id=""   required  [(ngModel)]=model.mobile  #mobile="ngModel">
+        <div *ngIf="mobile.invalid && (mobile.dirty || mobile.untouched)"
+       class="alert alert-danger">
+       mobile  is invalid
+       </div> 
+</div>
+<input type="submit"[disabled]="!myform.form.valid" value="save">
+</form>
+
+
