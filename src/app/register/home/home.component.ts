@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
 
   }
   edit(array:Home){
-this.register.editHome(array)
+this.home=array
   }
    delete(array:Home){
     this.register.deleteHome(array)
